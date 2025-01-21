@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>Recommendation Result</title>
+</head>
+<body>
+    <h1>Recommendation Result</h1>
+    <p>Your BMI: {{ bmi }}</p>
+    <p>Status: {{ status }}</p>
+    <p>Meal Type: {{ meal_type }}</p>
+    <h2>Recommended Food Items:</h2>
+    <ul>
+        {% for item in recommendations %}
+            <li>{{ item['Food_items'] }} - {{ item['Calories'] }} Calories</li>
+        {% endfor %}
+    </ul>
+    <a href="/">Back</a>
+</body>
+</html>
